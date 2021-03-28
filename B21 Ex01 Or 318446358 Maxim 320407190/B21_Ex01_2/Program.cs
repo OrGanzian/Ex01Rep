@@ -9,47 +9,51 @@ namespace B21_Ex01_2
     {
         static public void Main()
         {
-            RecursiveClockPrint(0, 5, 1);
+            RecursiveClockPrint(0, 7, 1);
+            Console.WriteLine("Press enter to exit");
             Console.ReadLine();
         }
 
 
-        public static void RecursiveClockPrint(int offset, int stars, int inc)
+        public static void RecursiveClockPrint(int i_NumOfSpaces, int i_NumOfStars, int i_IncrementValue)
         {
 
-            if (offset < 0 && inc < 0)
+            if (i_NumOfSpaces < 0 && i_IncrementValue < 0)
             {
                 return;
             }
 
-
-            printLine(offset, stars);
-
-            if (stars == 1)
+            if (i_NumOfStars % 2 != 0)
             {
-                inc = -1;
+                printLine(i_NumOfSpaces, i_NumOfStars);
             }
 
-            RecursiveClockPrint(offset + inc, stars - inc, inc);
+            if (i_NumOfStars == 1)
+            {
+                i_IncrementValue = -1;
+            }
+
+            RecursiveClockPrint(i_NumOfSpaces + i_IncrementValue, i_NumOfStars - i_IncrementValue, i_IncrementValue);
 
         }
 
-        public static void printLine(int offset, int stars)
+        public static void printLine(int i_Offset, int i_Stars)
         {
-            for (int i = 0; i < offset; i++)
-            {
-                Console.Write(" ");
+            StringBuilder builder = new StringBuilder();
 
-            }
-               
-            // Print stars with a space 
-            for (int i = 0; i < stars; i++)
+            for (int i = 0; i < i_Offset; i++)
             {
-                Console.Write("* ");
-
+                builder.Append(" ");
             }
-            // Print a new line 
-            Console.WriteLine();
+
+            for (int i = 0; i < i_Stars; i++)
+            {
+                builder.Append("* ");
+            }
+
+            Console.WriteLine(builder);
         }
+
     }
+
 }
