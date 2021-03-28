@@ -5,7 +5,7 @@ using System.Text;
 
 namespace B21_Ex01_2
 {
-    class Program
+    public class Program
     {
         static public void Main()
         {
