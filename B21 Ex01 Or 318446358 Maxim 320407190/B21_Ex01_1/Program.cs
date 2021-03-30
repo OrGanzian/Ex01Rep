@@ -14,9 +14,9 @@ namespace B21_Ex01_1
         {
             StringBuilder binaryString = new StringBuilder();
 
-            Console.WriteLine(string.Format("Hello User, Please choose from the menu :{0}", System.Environment.NewLine));
-            Console.WriteLine(string.Format("1: 1111011 ,1101110 ,1000000 .(Input example){0}2: 0010111 ,0110000 ,0011100 .(Input example)", System.Environment.NewLine));
-            Console.WriteLine(string.Format("3: 1011111 ,1101111 ,0110011 .(Input example){0}4: Input from keyboard.{0}", System.Environment.NewLine));
+            Console.WriteLine(string.Format("Hello User, Please choose from the menu :{0}", Environment.NewLine));
+            Console.WriteLine(string.Format("1: 1111011 ,1101110 ,1000000 .(Input example){0}2: 0010111 ,0110000 ,0011100 .(Input example)", Environment.NewLine));
+            Console.WriteLine(string.Format("3: 1011111 ,1101111 ,0110011 .(Input example){0}4: Input from keyboard.{0}", Environment.NewLine));
             string userChoiceFromMenu = Console.ReadLine();
             while (userChoiceFromMenu != "1" && userChoiceFromMenu != "2" && userChoiceFromMenu != "3" && userChoiceFromMenu != "4")
             {
@@ -46,8 +46,8 @@ namespace B21_Ex01_1
 
         private static void printBinaryStringStatistics(StringBuilder i_BinaryString)
         {
-            int zerosCount = 0;
-            int onesCount = 0;
+            double zerosCount = 0;
+            double onesCount = 0;
             double avgZeros = 0;
             double avgOnes = 0;
             int exponentCount = 0;
@@ -71,7 +71,7 @@ namespace B21_Ex01_1
                 checkIfExponentOfTwo(ref exponentCount, smallBinarySeriesString);
                 isScallingUp(ref scallingUpNumberCount, decimalNumber);
                 allDecimalNumbersArray[i] = decimalNumber;
-                string decimalString = string.Format("Binary: {0} --> Decimal: {1}{2} ", smallBinarySeriesString.ToString(), decimalNumber, System.Environment.NewLine);
+                string decimalString = string.Format("Binary: {0} --> Decimal: {1}{2} ", smallBinarySeriesString.ToString(), decimalNumber, Environment.NewLine);
                 decimalNumbersString.Append(decimalString);
             }
 
@@ -79,14 +79,16 @@ namespace B21_Ex01_1
             avgZeros = zerosCount / 3;
             avgOnes = onesCount / 3;
             string messageToUser = string.Format
-(@"The average number of zero's is : {0}.
+
+(@"
+The average number of zero's is : {0}.
 The average number of one's is : {1}.
 The number of decimals in the power of two is : {2}.
 The number of ascending sequences is : {3}.
 The highest number is : {4}.
 The lowest number is : {5}.
 The numbers are:{7} {6}
-        ", avgZeros, avgOnes, exponentCount, scallingUpNumberCount, maxNumber, minNumber, decimalNumbersString, System.Environment.NewLine);
+        ", avgZeros, avgOnes, exponentCount, scallingUpNumberCount, maxNumber, minNumber, decimalNumbersString, Environment.NewLine);
             Console.WriteLine(messageToUser);
         }
 
@@ -155,7 +157,7 @@ The numbers are:{7} {6}
             }
         }
 
-        private static void zerosAndOnesCount(StringBuilder i_SmallBinarySeriesString, ref int io_ZerosCount, ref int io_OnesCount)
+        private static void zerosAndOnesCount(StringBuilder i_SmallBinarySeriesString, ref double io_ZerosCount, ref double io_OnesCount)
         {
             for (int i = 0; i < 7; i++)
             {
@@ -178,7 +180,7 @@ The numbers are:{7} {6}
             for (int i = 0; i < 3; i++)
             {
                 StringBuilder stringBinaryNumber = new StringBuilder(8);
-                Console.WriteLine(string.Format("Enter {1} binary number:{0}", System.Environment.NewLine, i + 1));
+                Console.WriteLine(string.Format("Enter {1} binary number:{0}", Environment.NewLine, i + 1));
                 stringBinaryNumber.Append(Console.ReadLine());
                 correctBinaryNumber = checkUserInput(stringBinaryNumber);
                 if (correctBinaryNumber == true)
