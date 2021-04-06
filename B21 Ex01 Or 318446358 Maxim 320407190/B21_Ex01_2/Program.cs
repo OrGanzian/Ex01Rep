@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace B21_Ex01_2
 {
     public class Program
     {
-        static public void Main()
+        public static void Main()
         {
             RecursiveClockPrint(0, 7, 1);
             Console.WriteLine("Press enter to exit");
             Console.ReadLine();
         }
 
-
         public static void RecursiveClockPrint(int i_NumOfSpaces, int i_NumOfStars, int i_IncrementValue)
         {
-
             if (i_NumOfSpaces < 0 && i_IncrementValue < 0)
             {
                 return;
@@ -34,7 +30,6 @@ namespace B21_Ex01_2
             }
 
             RecursiveClockPrint(i_NumOfSpaces + i_IncrementValue, i_NumOfStars - i_IncrementValue, i_IncrementValue);
-
         }
 
         public static void printLine(int i_Offset, int i_Stars)
@@ -53,7 +48,5 @@ namespace B21_Ex01_2
 
             Console.WriteLine(builder);
         }
-
     }
-
 }
