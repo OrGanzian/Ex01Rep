@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App1.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
