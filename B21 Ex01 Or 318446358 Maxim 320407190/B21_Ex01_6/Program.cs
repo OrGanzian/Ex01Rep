@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace B21_Ex01_6
+namespace B21_Ex01_5
 {
     public class Program
     {
